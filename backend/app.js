@@ -14,8 +14,7 @@ const memoryStorage = []
 // Configuration de la connexion à la base de données MongoDB
 require('dotenv').config()
 
-mongoose.connect(
-    `mongodb+srv://Remy:passmongo@cluster0.yrtvsh5.mongodb.net/?retryWrites=true&w=majority`,
+mongoose.connect(process.env.MONGODB_URL,
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => console.log('Connexion à MongoDB réussie !'))
